@@ -1,0 +1,4 @@
+ISU_DB_HOST=localhostI
+SU_DB_PORT=3306
+ISU_DB_USER=local_user
+ISU_DB_PASSWORD=password
