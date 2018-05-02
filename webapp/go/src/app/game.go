@@ -149,10 +149,7 @@ func big2exp(n *big.Int) Exponential {
 
 func getCurrentTime() (int64, error) {
 	var currentTime int64
-	err := db.Get(&currentTime, "SELECT floor(unix_timestamp(current_timestamp(3))*1000)")
-	if err != nil {
-		return 0, err
-	}
+	currentTime = time.Now().UnixNano() / 1000000
 	return currentTime, nil
 }
 
@@ -177,11 +174,7 @@ func updateRoomTime(tx *sqlx.Tx, roomName string, reqTime int64) (int64, bool) {
 	}
 
 	var currentTime int64
-	err = tx.Get(&currentTime, "SELECT floor(unix_timestamp(current_timestamp(3))*1000)")
-	if err != nil {
-		log.Println(err)
-		return 0, false
-	}
+	currentTime = time.Now().UnixNano() / 1000000
 	if roomTime > currentTime {
 		log.Println("room time is future")
 		return 0, false
