@@ -657,7 +657,7 @@ func getItems() []mItem {
 			      Power1: 0,
 			      Power2: 1,
 			      Power3: 1,
-			      Power4: 2,
+			      Power4: 1,
 			      Price1: 0,
 			      Price2: 1,
 			      Price3: 2,
@@ -682,7 +682,7 @@ func getItems() []mItem {
 			      Power4: 2,
 			      Price1: 1,
 			      Price2: 10,
-			      Price3: 1,
+			      Price3: 0,
 			      Price4: 3,
 		    },
 		    mItem{
