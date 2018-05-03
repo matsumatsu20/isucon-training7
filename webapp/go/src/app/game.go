@@ -340,19 +340,19 @@ func getStatus(roomName string) (*GameStatus, error) {
 		mItems[item.ItemID] = item
 	}
 
-	log.Println(mItems)
+	// log.Println(mItems)
 
-	err = tx.Select(&items, "SELECT * FROM m_item")
-	if err != nil {
-		tx.Rollback()
-		return nil, err
-	}
-
-	for _, item := range items {
-		mItems[item.ItemID] = item
-	}
-
-	log.Println(mItems)
+	// err = tx.Select(&items, "SELECT * FROM m_item")
+	// if err != nil {
+	// 	tx.Rollback()
+	// 	return nil, err
+	// }
+	//
+	// for _, item := range items {
+	// 	mItems[item.ItemID] = item
+	// }
+	//
+	// log.Println(mItems)
 
 	addings := []Adding{}
 	err = tx.Select(&addings, "SELECT time, isu FROM adding WHERE room_name = ?", roomName)
@@ -774,7 +774,7 @@ func getItems() []mItem {
 			      Price4: 19,
 		    },
 		    mItem{
-			      ItemID: 14,
+			      ItemID: 13,
 			      Power1: 11000,
 			      Power2: 11000,
 			      Power3: 11000,
